@@ -1,3 +1,8 @@
+<!-- 
+갱신 button 클릭 -> sendEvent() 메소드 발생 -> 루트 컴퍼넌트에 refresh라는 custom event 전달
+-> refresh event는 루트 컴퍼넌트의 showAlert 메소드를 발생시킴 -> 새로고침 알람 발생
+-->
+
 <!-- HTML -->
 <div id="app">
   <!-- <app-contents v-on:이벤트이름="상위 컴포넌트의 메서드 이름"></app-contents> -->
@@ -15,6 +20,8 @@
     `,
     methods: {
       sendEvent() {
+        // emit: 커스텀 이벤트를 발생시키는 메서드
+        // refresh event를 하위 컴포넌트에서 위쪽 컴퍼넌트로 쏘아올림
         this.$emit('refresh');
       }
     }

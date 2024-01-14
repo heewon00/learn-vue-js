@@ -1,6 +1,7 @@
 <!-- HTML -->
 <div id="app">
   <p>{{ count }}</p>
+  <!-- Vue Directive : v- 접두사가 있는 속성으로, button을 클릭할 때마다 addCount 실행 -->
   <button v-on:click="addCount">+</button>
 </div>
 
@@ -8,13 +9,18 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script>
   Vue.createApp({
+    // data: 뷰의 반응성(Reactivity)이 반영된 데이터 속성
+    // 속성명: function() = 속성명()
     data() {
       return {
         count: 0
       }
     },
+    //methods: 화면의 동작과 이벤트 로직을 제어하는 메서드
     methods: {
+      //addCount가 실행될 때마다 적용되는 이벤트
       addCount() {
+        //createApp에 있는, reactivity가 적용된 count라는 값에 접근하겠다.
         this.count++;
       }
     }

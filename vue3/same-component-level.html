@@ -1,3 +1,8 @@
+<!-- 로그인 button 클릭 -> sendEvent 발생 -> login이라는 custom event 발생 ->
+login은 상위 컴퍼넌트의 receive 메서드를 발생시킴 -> message가 로그인 됨으로 변경 ->
+app-header 하위 컴퍼넌트의 appTitle이라는 props는 상위 컴퍼넌트의 message를 참조함 ->
+로그인 됨으로 문구가 변경됨을 확인할 수 있음 -->
+
 <!-- HTML -->
 <div id="app">
   <app-header v-bind:app-title="message"></app-header>

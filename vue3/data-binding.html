@@ -3,6 +3,7 @@
   <!-- 1. v-if -->
   <p v-if="login">로그인 되었습니다</p>
   <p v-else>로그인 하세요</p>
+  <!-- 로그인을 클릭하면 loginUser 메서드 발생 -->
   <button v-on:click="loginUser">로그인</button>
 
   <hr>
@@ -23,6 +24,7 @@
     },
     methods: {
       loginUser() {
+        // 로그인 값을 변경
         this.login = !this.login;
       }
     }

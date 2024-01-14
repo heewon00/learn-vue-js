@@ -1,7 +1,8 @@
 <template>
+  <!-- 컴퍼넌트 명명규칙은 Pascal Case 권장 -->
   <AppHeader 
-    v-bind:appTitle="message"
-    v-on:change="changeMessage">
+    :appTitle="message"
+    @change="changeMessage">
   </AppHeader>
 </template>
 
@@ -15,6 +16,7 @@ export default {
     // 'app-header': AppHeader,
     // 'AppHeader': AppHeader,
     // AppHeader: AppHeader,
+    // key=value이면 value값만 써도 됨
     AppHeader
   },
   data() {

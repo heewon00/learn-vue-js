@@ -2,19 +2,19 @@
 
 <body>
   <div id="app">
-    
+    {{ message }}
   </div>
 </body>
 
 <script>
-  // Vue 2
-  new Vue({
-    el: '#app'
-  })
+  // // Vue 2
+  // new Vue({
+  //   el: '#app'
+  // })
 
-  new Vue({
-    // el: '#app'
-  }).mount('#app') 
+  // new Vue({
+  //   // el: '#app'
+  // }).mount('#app') 
 
   // Vue 3
   Vue.createApp({
@@ -24,4 +24,5 @@
       }
     }
   }).mount('#app');
+  // mount API 호출 : tag중 id값이 app
 </script>

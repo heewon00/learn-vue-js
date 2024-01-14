@@ -9,17 +9,27 @@
   }
 
   function render(sth) {
+    // DOM API : HTML 태그 정보를 접근할 수 있음. 여기서는 id=app에 접근
     var div = document.querySelector('#app');
+    // sth: div 태그 안에 출력될 내용
     div.innerHTML = sth;
   }
 
+  // app = data라는 객체에 proxy를 건 결과
+  // Proxy(data, {data의 동작 정의}): new Proxy가 data라는 객체를 모방한 후, 동작을 추가함
+  // [접근] get(): 객체(data)의 속성을 접근할 때마다 출력할 내용
+  // [변경] set(): 객체의 속성을 변경할 때마다 출력할 내용
   var app = new Proxy(data, {
     get() {
+      // app.num
       console.log('값 접근')
     },
+    //target:객체의, prop:속성값에, newValue:새로운 값 부여
     set(target, prop, newValue) {
+      // app.num=20
       console.log('값 갱신')
       target[prop] = newValue;
+      //변경된 값이 반영됨
       render(newValue);
     }
   })
